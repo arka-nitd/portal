@@ -65,7 +65,7 @@ else if($type=='2'){
 		<li role="presentation" class="active"><a href="#">Home</a></li>
 		<li role="presentation"><a href="#">Student Details</a></li>
 		<li role="presentation"><a href="#">Update Marks</a></li>
-		<li role="presentation"><a href="#">Update Attendance</a></li>
+		<li role="presentation"><a href="attendance.php">Update Attendance</a></li>
 		<li role="presentation"><a href="#">Check Appointment</a></li>
 		<li role="presentation"><a href="#">Student List</a></li>
 		<li role="presentation"><a href="logout.php">Logout</a></li>
