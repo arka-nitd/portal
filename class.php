@@ -2,10 +2,10 @@
 
 echo "<h2>Update the attendance</h2><br>";
 if(isset($_GET['ctype'])){
-	$ctype = mysql_real_escape_string($_GET['ctype']);
+	$ctype = mysqli_real_escape_string($db,$_GET['ctype']);
 	$ctype = (int)$ctype;
-	$sql = mysql_query("SELECT name, roll FROM student WHERE class='$ctype'");
-	$usercount = mysql_num_rows($sql);
+	$result = mysqli_query($db,"SELECT name, roll FROM student WHERE class='$ctype'");
+	$usercount = mysqli_num_rows($result);
 	if($usercount>0){
 		echo 
 		'<table class="table table-bordered">
@@ -18,7 +18,7 @@ if(isset($_GET['ctype'])){
 		<tbody>
 		<form role="form" method="POST" action="class.php">';
 		$p=1;
-		while ($row = mysql_fetch_array($sql)) {
+		while ($row = $result->fetch_assoc()) {
 			$name=$row['name'];
 			$rollno = $row['roll'];
 			echo

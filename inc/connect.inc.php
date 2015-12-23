@@ -1,4 +1,9 @@
 <?php
-mysql_connect("localhost", "root", "") or die("Couldn't connect to SQL Server");
-mysql_select_db("portal") or die("Couldn't select DB");
+
+$db = new mysqli('localhost','root','','portal');
+
+if($db->connect_errno>0){
+	die('Unable to connect to the database['.$db->connect_error.']');
+}
+
 ?>
