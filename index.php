@@ -6,16 +6,16 @@
 		$user_login = preg_replace('#[^A-Za-z0-9]#i', '', $_POST["username"]);
 		$password_login = preg_replace('#[^A-Za-z0-9]#i', '', $_POST["pwd"]);
 		$password_login_md5 = md5($password_login);
-		$sql = "SELECT * FROM users WHERE username='$user_login' AND password='$password_login' LIMIT 1";
+		$sql = "SELECT * FROM users WHERE username='$user_login' AND password='$password_login_md5' LIMIT 1";
 		$result =mysqli_query($db,$sql);
 		//check for their existense
 		$userCount = mysqli_num_rows($result);
 		$row = $result->fetch_assoc();
 		if($userCount==1){
-			$id=$row["id"];
-			$type=$row["type"];
+			$user_id=$row["user_id"];
+			$type=$row["user_type"];
 			$_SESSION["type"]=$type;
-			$_SESSION["name"]=$user_login;
+			$_SESSION["user_id"]=$user_id;
 			header("location: profile.php");
 			exit();
 			

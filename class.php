@@ -1,10 +1,10 @@
 <?php include ('./inc/header.inc.php');
 
-echo "<h2>Update the attendance</h2><br>";
-if(isset($_GET['ctype'])){
-	$ctype = mysqli_real_escape_string($db,$_GET['ctype']);
-	$ctype = (int)$ctype;
-	$result = mysqli_query($db,"SELECT name, roll FROM student WHERE class='$ctype'");
+echo "<h2>Update the attendance : Class ";
+if(isset($_GET['cid'])){
+	$cid = mysqli_real_escape_string($db,$_GET['cid']);
+	$result = mysqli_query($db,"SELECT name, roll FROM student WHERE class_id='$cid'");
+	echo $cid."</h2><br>";
 	$usercount = mysqli_num_rows($result);
 	if($usercount>0){
 		echo 

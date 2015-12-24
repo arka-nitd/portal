@@ -2,12 +2,13 @@
 
 include('./inc/connect.inc.php');
 session_start();
-if(!isset($_SESSION['type'])){
-	$name='';
+if(!isset($_SESSION['user_id'])){
+	$uid='';
 	$type='0';
+
 }
 else{
-	$name=$_SESSION['name'];
+	$uid=$_SESSION['user_id'];
 	$type=$_SESSION['type'];
 }
 ?>
