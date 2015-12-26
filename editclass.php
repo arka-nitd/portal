@@ -36,7 +36,7 @@ if(isset($_GET['cid'])){
 		<th>Present/Absent</th>
 		</tr></thread>
 		<tbody>
-		<form role="form" method="POST" action="class.php">';
+		<form role="form" method="POST" action="editclass.php">';
 		$p=0;
 		while ($row = $result->fetch_assoc()) {
 			$name=$row['name'];
